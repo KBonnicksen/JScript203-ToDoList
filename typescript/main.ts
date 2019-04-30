@@ -2,6 +2,9 @@ window.onload = functon{
 
 }
 
+/**
+ * Represents a single task in a ToDo list
+ */
 class ToDoItem{
     title:string;
     description:string;
@@ -11,6 +14,7 @@ class ToDoItem{
     urgency:string;
 }
 
+/*
 let testItem = new ToDoItem();
 testItem.title = "Go to class";
 testItem.description = "Wake up, get ready, drive and listen to podcast";
@@ -19,4 +23,4 @@ testItem.endDate = new Date("April 30, 2019");
 testItem.isComplete = false;
 if(testItem.isComplete){
     //do something
-}
+}*/
