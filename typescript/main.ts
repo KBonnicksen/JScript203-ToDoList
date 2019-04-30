@@ -1,4 +1,4 @@
-window.onload = functon{
+window.onload = function(){
 
 }
 
