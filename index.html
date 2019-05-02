@@ -42,24 +42,20 @@
         <br><br>
 
 
-        <label for="">Title: </label>
-        <input id="" type="text">
+        <label for="is-complete">Is Complete?</label>
+        <input id="is-complete" type="checkbox">
+        <br><br>
+
+        <label for="urgency">Choose an urgency: </label>
+        <select id="urgency">
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+        </select>
         <span>*</span>
         <br><br>
 
-        <label for="">Title: </label>
-        <input id="" type="text">
-        <span>*</span>
-        <br><br>
-
-        <label for="">Title: </label>
-        <input id="" type="text">
-        <span>*</span>
-        <br><br>
-
-        <label for="">Title: </label>
-        <input id="" type="text">
-        <span>*</span>
+        <button type="button">Add To-Do Item</button>
     </div>
     <script>
         const picker = datepicker(".due-date")
