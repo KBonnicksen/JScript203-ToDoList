@@ -1,6 +1,3 @@
-window.onload = function(){
-
-}
 
 /**
  * Represents a single task in a ToDo list
@@ -14,13 +11,63 @@ class ToDoItem{
     urgency:string;
 }
 
-/*
-let testItem = new ToDoItem();
-testItem.title = "Go to class";
-testItem.description = "Wake up, get ready, drive and listen to podcast";
-testItem.startDate = new Date("April 30, 2019");
-testItem.endDate = new Date("April 30, 2019");
-testItem.isComplete = false;
-if(testItem.isComplete){
-    //do something
-}*/
+window.onload = function(){
+    (<HTMLButtonElement>document.getElementById("add-to-do")).onclick = processNewItem;
+}
+
+function processNewItem(){
+    //get data off the page and wrap in todo object
+    //Notify user and clear form
+    //Save ToDo object
+
+    let item:ToDoItem = getItemFromForm();
+
+    saveItem(item);
+    notifyUser();
+    ClearForm();
+}
+
+/**
+ * Get all user input from Form
+ * and wrap it in a ToDoItem
+ */
+function getItemFromForm():ToDoItem{
+    let item = new ToDoItem;
+
+    item.title = 
+        (<HTMLInputElement>document.getElementById("title")).value;
+    item.description = 
+        (<HTMLInputElement>document.getElementById("description")).value;
+
+    let itemStartDate:string = 
+        (<HTMLInputElement>document.getElementById("start-date")).value;
+    item.startDate = new Date(itemStartDate);
+
+    let itemEndDate:string = 
+        (<HTMLInputElement>document.getElementById("end-date")).value;
+    item.endDate = new Date(itemEndDate);
+
+    item.isComplete = 
+        (<HTMLInputElement>document.getElementById("is-complete")).checked;
+    item.urgency = 
+        (<HTMLInputElement>document.getElementById("urgency")).value;
+
+    console.log(item);
+    return item;
+}
+
+function ClearForm():void{
+
+}
+
+function notifyUser(){
+
+}
+
+function saveItem(item:ToDoItem):void{
+    //ensure user can use localStorage
+    if(typeof(Storage) !== "undefined"){
+        localStorage.setItem("todo", item.title);
+    }
+}
+
