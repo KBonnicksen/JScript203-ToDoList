@@ -58,16 +58,31 @@ function getItemFromForm():ToDoItem{
 
 function ClearForm():void{
 
+    //can alternatively wrap all inputs in a <form> tag and reset form
+    //clear out all text elements
+    let textElems = document.querySelectorAll("#create-item > input[type=text], textarea");
+    for (let i = 0; i < textElems.length; i++) {
+        (<HTMLInputElement>textElems[i]).value = "";
+    }
+
+    //un-check checked box
+    (<HTMLInputElement>document.getElementById("is-complete")).checked = false;
+
+    //reset select list
+    document.getElementById("urgency").val
 }
 
-function notifyUser(){
-
+function notifyUser():void{
+    alert("Your item was saved");
 }
 
 function saveItem(item:ToDoItem):void{
+    console.log("Converting todoItem into JSON string....");
+    console.log(JSON.stringify(item));
     //ensure user can use localStorage
     if(typeof(Storage) !== "undefined"){
-        localStorage.setItem("todo", item.title);
+        localStorage.setItem("todo", JSON.stringify(item));
+        notifyUser();
     }
 }
 
