@@ -32,12 +32,12 @@
         <br><br>
 
         <label for="start-date">Start Date: </label>
-        <input id="start-date" class="due-date" type="date">
+        <input id="start-date" class="due-date" type="text">
         <span>*</span>
         <br><br>
 
         <label for="end-date">End Date: </label>
-        <input id="end-date" class="due-date" type="date">
+        <input id="end-date" class="due-date2" type="text">
         <span>*</span>
         <br><br>
 
@@ -63,7 +63,8 @@
 
     <div id="todo-list"></div>
     <script>
-        const picker = datepicker(".due-date")
+        datepicker(".due-date");
+        datepicker(".due-date2");
     </script>
 </body>
 </html>
