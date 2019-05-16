@@ -9,7 +9,7 @@ class ToDoItem{
     endDate:Date;
     isComplete:boolean;
     urgency:string;
-}
+} 
 
 window.onload = function(){
     (<HTMLButtonElement>document.getElementById("add-to-do")).onclick = processNewItem;

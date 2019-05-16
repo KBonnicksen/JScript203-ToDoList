@@ -11,7 +11,7 @@ p.completed{
 #todo-list > p, p.completed{
     background-color: green;
     color: white;
-    padding: .5em;
+    padding: .5em; 
     border-radius: .2em;
     display: inline-block;
     margin-right: .75em;
