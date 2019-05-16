@@ -16,15 +16,32 @@ window.onload = function(){
 }
 
 function processNewItem(){
-    //get data off the page and wrap in todo object
-    //Notify user and clear form
-    //Save ToDo object
 
     let item:ToDoItem = getItemFromForm();
 
     saveItem(item);
     notifyUser();
     ClearForm();
+    displayToDo(item);
+}
+
+function displayToDo(item:ToDoItem){
+    let todoList = document.getElementById("todo-list");
+    let itemPar = document.createElement("p");
+    todoList.appendChild(itemPar);
+    itemPar.innerText = item.title;
+    itemPar.onclick = toggleItemComplete;
+
+    itemPar.setAttribute("data-description", item.description);
+}
+
+function toggleItemComplete(){
+    let currItem:HTMLElement = this;
+    currItem.classList.toggle("completed");
+    let title = currItem.innerText;
+    let description = currItem.getAttribute("data-description");
+
+    alert("You completed " + title + ": " + description);
 }
 
 /**
@@ -69,11 +86,11 @@ function ClearForm():void{
     (<HTMLInputElement>document.getElementById("is-complete")).checked = false;
 
     //reset select list
-    document.getElementById("urgency").val
+    (<HTMLInputElement>document.getElementById("urgency")).value;
 }
 
 function notifyUser():void{
-    alert("Your item was saved");
+    //alert("Your item was saved");
 }
 
 function saveItem(item:ToDoItem):void{
