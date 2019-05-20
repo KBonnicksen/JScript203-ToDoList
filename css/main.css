@@ -1,3 +1,7 @@
+.jumbotron{
+    /*background-color: rgb(255, 199, 134) !important;*/
+}
+
 span{
     color: red;
 }
@@ -15,4 +19,11 @@ p.completed{
     border-radius: .2em;
     display: inline-block;
     margin-right: .75em;
+}
+#add-item-box{
+    padding: 2em;
+}
+
+#add-item-box{
+border: pink !important;
 }
