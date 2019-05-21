@@ -48,30 +48,29 @@
             
                     <textarea class="form-control" id="description" rows="5" placeholder="Description...."></textarea>
                     <span></span>
-
-                    
                     <br>
             
                     <label for="urgency">Urgency</label>
-                        
-                        <select class="form-control"id="urgency">
-                            <option value="low">Low</option>
-                            <option value="medium">Medium</option>
-                            <option value="high">High</option>
-                        </select>
-                        <span>*</span>
-                        
+                    <select class="form-control"id="urgency">
+                        <option value="low">Low</option>
+                        <option value="medium">Medium</option>
+                        <option value="high">High</option>
+                    </select>
+                    <span>*</span>
                     <br>
                     <label for="is-complete">Already completed?</label>
                         <input type="checkbox" id="is-complete" >
                     <br><br>
-            
                     <button type="button" class="btn btn-primary" id="add-to-do">Add</button>
                 </form>
             </div>
-            <div class="col-sm-4 card offset-1">
 
+            <div class="col-sm-4 card offset-1" id="to-do-list">
+                <h2>To Do</h2>
+                <p>Double click to <s>cross out</s>!</p>
+                <ul class="list-group"id="to-do-items"></ul>
             </div>
+
             <script>
                 datepicker("#start-date");
                 datepicker("#end-date");

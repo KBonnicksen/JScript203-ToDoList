@@ -9,24 +9,36 @@ window.onload = function () {
 function processNewItem() {
     var item = getItemFromForm();
     saveItem(item);
-    notifyUser();
     ClearForm();
     displayToDo(item);
 }
 function displayToDo(item) {
-    var todoList = document.getElementById("todo-list");
-    var itemPar = document.createElement("p");
-    todoList.appendChild(itemPar);
-    itemPar.innerText = item.title;
-    itemPar.onclick = toggleItemComplete;
-    itemPar.setAttribute("data-description", item.description);
+    var todoList = document.getElementById("to-do-list");
+    var itemLi = document.createElement("li");
+    todoList.appendChild(itemLi);
+    itemLi.className = getClassName(item);
+    itemLi.innerText = item.title;
+    itemLi.ondblclick = toggleItemComplete;
+    itemLi.setAttribute("data-description", item.description);
+}
+function getClassName(item) {
+    if (item.isComplete) {
+        return "completed list-group-item list-group-item-action list-group-item-success";
+    }
+    switch (item.urgency) {
+        case "low":
+            return "list-group-item list-group-item-action list-group-item-light";
+        case "medium":
+            return "list-group-item list-group-item-action list-group-item-warning";
+        case "high":
+            return "list-group-item list-group-item-action list-group-item-danger";
+    }
 }
 function toggleItemComplete() {
     var currItem = this;
     currItem.classList.toggle("completed");
     var title = currItem.innerText;
     var description = currItem.getAttribute("data-description");
-    alert("You completed " + title + ": " + description);
 }
 function getItemFromForm() {
     var item = new ToDoItem;
@@ -53,13 +65,10 @@ function ClearForm() {
     document.getElementById("is-complete").checked = false;
     document.getElementById("urgency").value;
 }
-function notifyUser() {
-}
 function saveItem(item) {
     console.log("Converting todoItem into JSON string....");
     console.log(JSON.stringify(item));
     if (typeof (Storage) !== "undefined") {
         localStorage.setItem("todo", JSON.stringify(item));
-        notifyUser();
     }
 }

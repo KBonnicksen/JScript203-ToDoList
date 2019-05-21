@@ -1,15 +1,12 @@
-.jumbotron{
-    /*background-color: rgb(255, 199, 134) !important;*/
-}
+
 
 span{
     color: red;
 }
 
-p.completed{
+.completed{
     text-decoration: line-through;
     background-color: lightgreen !important;
-
 }
 
 #todo-list > p, p.completed{
@@ -20,10 +17,9 @@ p.completed{
     display: inline-block;
     margin-right: .75em;
 }
-#add-item-box{
+.row > div{
     padding: 2em;
 }
-
-#add-item-box{
-border: pink !important;
+.list-group-item-danger{
+    background-color: rgb(167, 4, 4);
 }
