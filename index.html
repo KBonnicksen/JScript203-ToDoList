@@ -21,17 +21,14 @@
     <script src="scripts/main.js"></script>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="jumbotron">
-                <h1 class="page-header">To Do List</h1>
-                <p class="lead">Track and manage the things on your list <b>TODAY!</b></p>
-            </div>
-        </header>
-        
+    <div class="jumbotron" style="padding-bottom: 2%; padding-left: 15%">
+        <h1 class="display-2">To Do List</h1>
+        <p class="lead">Track and manage the things on your list <b>TODAY!</b></p>
+    </div>
+    <div class="container">     
         <div class="row">
-            <div class="col-sm-7 card " id="add-item-box">
-                <h2>Add an item</h2>
+            <div class="col-sm-7 card" id="add-item-box">
+                <h2 class="display-4">Add an item</h2>
                 <form class="form-group">
                     <input class="form-control" id="title" type="text" data-required placeholder="Title">
                     <span>*</span>
@@ -66,7 +63,7 @@
             </div>
 
             <div class="col-sm-4 card offset-1" id="to-do-list">
-                <h2>To Do</h2>
+                <h2 class="display-4">To Do</h2>
                 <p>Double click to <s>cross out</s>!</p>
                 <ul class="list-group"id="to-do-items"></ul>
             </div>

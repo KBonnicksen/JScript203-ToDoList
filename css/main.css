@@ -1,4 +1,6 @@
-
+.jumbotron{
+    padding-bottom: 0%;
+}
 
 span{
     color: red;
@@ -18,8 +20,18 @@ span{
     margin-right: .75em;
 }
 .row > div{
+    border-radius: 2em;
     padding: 2em;
 }
 .list-group-item-danger{
     background-color: rgb(167, 4, 4);
+}
+#add-item-box{
+    background-color: rgb(185, 253, 179);
+    border: dotted rgb(9, 175, 31);
+}
+
+#to-do-list{
+    background-color: rgb(231, 245, 253);
+    border: dotted rgb(9, 136, 175);
 }
